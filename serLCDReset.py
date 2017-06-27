@@ -1,6 +1,7 @@
 import serial
 import sys
 import glob
+import time
 
 def reset():
     print('\r\nSending')
@@ -42,15 +43,19 @@ print('Please ensure only power and ground are connected, once you start the pro
 print(serial_ports())
 
 comPort = input('\r\nEnter com port number ONLY: ')
-
-ser = serial.Serial(
-    port='COM' + comPort,
-    baudrate=9600,
-    bytesize=serial.EIGHTBITS,
-    parity=serial.PARITY_NONE,
-    stopbits=serial.STOPBITS_ONE,
-    timeout=1
-)
+try:
+    ser = serial.Serial(
+        port='COM' + comPort,
+        baudrate=9600,
+        bytesize=serial.EIGHTBITS,
+        parity=serial.PARITY_NONE,
+        stopbits=serial.STOPBITS_ONE,
+        timeout=1
+    )
+except:
+    print('invalid com port')
+    time.sleep(5)
+    quit()
 
 
 input('Press Enter to Start Sending')

@@ -4,6 +4,7 @@ import glob
 
 def reset():
     print('\r\nSending')
+    print('Please connect your UART tx pin to the rx pin of your SerLCD now')
     print('press ctrl-c to stop')
     while True:
         ser.write('bogus\r'.encode())

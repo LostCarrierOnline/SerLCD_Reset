@@ -1,6 +1,9 @@
 # SerLCD_Reset
 Simple tool to send a CR reset to the SerLCD
+https://www.sparkfun.com/products/258
 
+The reset will cause the serLCD to reset back to the default 9600 baud rate. I created this tool to reset one that had issues with
+the backlight not functioning. The device seemed completely dead prior to the reset. Give it a shot.
 
 Example output:
 
